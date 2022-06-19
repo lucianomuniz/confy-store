@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 import { useProductsContext } from '../context/products_context';
@@ -16,6 +16,11 @@ import {
 import styled from 'styled-components';
 
 const SingleProductPage = () => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  // navigate('/'); // em vez de history.push()
+
   return <h4>single product page</h4>;
 };
 
