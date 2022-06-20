@@ -11,11 +11,16 @@ const Contact = () => {
             iusto reiciendis dolore repellendus quasi similique numquam eaque,
             voluptates illum autem.
           </p>
-          <form className='contact-form'>
+          <form
+            className='contact-form'
+            action='https://formspree.io/f/xzboqzza'
+            method='POST'
+          >
             <input
               type='email'
               className='form-input'
               placeholder='enter email'
+              name='email'
             />
             <button type='submit' className='submit-btn'>
               subscribe
