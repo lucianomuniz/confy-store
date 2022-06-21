@@ -84,7 +84,40 @@ const filter_reducer = (state, action) => {
       };
 
     case FILTER_PRODUCTS:
-      return { ...state };
+      const { all_products } = state;
+      const { text, category, company, color, price, shipping } = state.filters;
+      let filterProducts = [...all_products];
+
+      if (text) {
+        filterProducts = filterProducts.filter((product) =>
+          product.name.toLowerCase().startsWith(text)
+        );
+      }
+      if (category !== 'all') {
+        filterProducts = filterProducts.filter(
+          (product) => product.category === category
+        );
+      }
+      if (company !== 'all') {
+        filterProducts = filterProducts.filter(
+          (product) => product.company === company
+        );
+      }
+      if (color !== 'all') {
+        filterProducts = filterProducts.filter((product) =>
+          product.colors.find((c) => c === color)
+        );
+      }
+      if (price) {
+        filterProducts = filterProducts.filter(
+          (product) => product.price <= price
+        );
+      }
+      if (shipping) {
+        filterProducts = filterProducts.filter((product) => product.shipping);
+      }
+
+      return { ...state, filtered_products: filterProducts };
 
     case CLEAR_FILTERS:
       return {
