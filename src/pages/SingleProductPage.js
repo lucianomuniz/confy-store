@@ -12,7 +12,6 @@ import {
   AddToCart,
   Stars,
   PageHero,
-  Hero,
 } from '../components';
 import styled from 'styled-components';
 
@@ -28,6 +27,7 @@ const SingleProductPage = () => {
 
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`);
+    // eslint-disable-next-line
   }, [id]);
 
   useEffect(() => {
@@ -36,6 +36,7 @@ const SingleProductPage = () => {
         navigate('/');
       }, 3000);
     }
+    // eslint-disable-next-line
   }, [error]);
 
   if (loading) {
