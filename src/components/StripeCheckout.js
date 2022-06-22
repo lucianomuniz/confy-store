@@ -17,7 +17,7 @@ import { useNavigate } from 'react-router-dom';
 const promise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
 const CheckoutForm = () => {
-  const { cart, total_amount, shipping_fee, clearCart } = useCartContext();
+  const { total_amount, shipping_fee, clearCart } = useCartContext();
   const { myUser } = useUserContext();
   const navigate = useNavigate();
 
@@ -92,7 +92,7 @@ const CheckoutForm = () => {
       setTimeout(() => {
         clearCart();
         navigate.push('/');
-      }, 10000);
+      }, 5000);
     }
   };
 
