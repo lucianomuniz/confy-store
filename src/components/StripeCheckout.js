@@ -131,7 +131,10 @@ const CheckoutForm = () => {
         {/* Show  a success message upon completion */}
         <p className={succeeded ? 'result-message' : 'result-message hidden'}>
           Payment succedded, see the result in your
-          <a href={`https://dashboard.stripe.com/test/payments`}>
+          <a
+            href={`https://dashboard.stripe.com/test/payments`}
+            target='_blank'
+          >
             Stripe dasboard.
           </a>
           Refresh the page to pay again
