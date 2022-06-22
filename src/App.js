@@ -26,9 +26,9 @@ const App = () => {
         <Route
           path='checkout'
           element={
-            // <PrivateRoute>
-            <Checkout />
-            // </PrivateRoute>
+            <PrivateRoute>
+              <Checkout />
+            </PrivateRoute>
           }
         />
         <Route path='*' element={<Error />} />
