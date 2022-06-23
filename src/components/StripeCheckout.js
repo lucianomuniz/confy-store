@@ -134,6 +134,7 @@ const CheckoutForm = () => {
           <a
             href={`https://dashboard.stripe.com/test/payments`}
             target='_blank'
+            rel='noreferrer'
           >
             Stripe dasboard.
           </a>
